@@ -28,9 +28,11 @@ public class video_sayfası extends BasePage {
 
 
     public void Reklam() {
-        BrowserUtils.waitFor(30);
-        if(reklamBtn.isEnabled()){
-            reklamBtn.click();
+        while(true){
+            if(reklamBtn.isDisplayed()){
+                reklamBtn.click();
+        }else break;
+
         }
 
     }
