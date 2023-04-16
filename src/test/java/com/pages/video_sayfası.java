@@ -28,27 +28,10 @@ public class video_sayfası extends BasePage {
 
 
     public void Reklam() {
-        try {
-            skipADD2(Driver.get());
-        } catch (Exception e) {
-            System.out.println("Skip Ad button is not available for this video.");
+        BrowserUtils.waitFor(30);
+        if(reklamBtn.isEnabled()){
+            reklamBtn.click();
         }
 
-        }
-
-    public static void skipADD2(WebDriver driver) throws Exception {
-
-        // Step 2: Check the Visibility of the skip add button
-        try {
-            WebElement skipButton = driver.findElement(By.xpath("//div[@class='ytp-ad-text ytp-ad-skip-button-text']"));
-            if (skipButton.isDisplayed()) {
-                // Step 3: If it True then perform click operation on skip ad
-                skipButton.click();
-            } else {
-                throw new Exception();
-            }
-        } catch (Exception e) {
-            throw new Exception();
-        }
     }
 }

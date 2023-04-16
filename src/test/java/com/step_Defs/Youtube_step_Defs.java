@@ -11,7 +11,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-import static com.pages.video_sayfası.skipADD2;
 
 public class Youtube_step_Defs {
 
@@ -53,14 +52,7 @@ public class Youtube_step_Defs {
     }
     @When("Videoda varsa reklamı atla")
     public void videoda_varsa_reklamı_atla() {
-
-        try {
-            skipADD2(Driver.get());
-        } catch (Exception e) {
-            System.out.println("Skip Ad button is not available for this video.");
-        }
-
-
+        videoSayfası.Reklam();
 
 
     }
