@@ -32,9 +32,9 @@ public class video_sayfası extends BasePage {
             if(reklamBtn.isDisplayed()){
                 BrowserUtils.waitForVisibility(reklamBtn,20);
                 reklamBtn.click();
-        }else break;
-
+            }else if (!(reklamBtn.isDisplayed())){
+                break;
+            }
         }
-
     }
 }
