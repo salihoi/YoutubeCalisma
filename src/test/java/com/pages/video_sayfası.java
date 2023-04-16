@@ -28,11 +28,15 @@ public class video_sayfası extends BasePage {
 
 
     public void Reklam() {
-        while(true){
-            BrowserUtils.waitForVisibility(reklamBtn,10);
-            if(reklamBtn.isDisplayed()){
-                reklamBtn.click();
-            }else if (!(reklamBtn.isDisplayed())){
+        WebDriverWait wait = new WebDriverWait(Driver.get(), 10);
+        WebElement skipAdButton = wait.until(ExpectedConditions.elementToBeClickable(reklamBtn));
+        skipAdButton.click();
+
+        while (true) {
+            try {
+                WebElement mandatoryAd = Driver.get().findElement(By.xpath("//div[@class='ytp-ad-overlay-close-container']"));
+                mandatoryAd.click();
+            } catch (Exception e) {
                 break;
             }
         }
