@@ -34,7 +34,7 @@ public class video_sayfası extends BasePage {
                 reklamBtn.click();
             }else if (!(reklamBtn.isDisplayed())){
                 break;
-            }
+            }break;
         }
     }
 }
