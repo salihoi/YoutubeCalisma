@@ -48,22 +48,22 @@ public class Youtube_step_Defs {
         System.out.println(actualText);
         System.out.println(expectedText);
 
+    }
+
+    @When("Videoyu tam ekran yap")
+    public void videoyu_tam_ekran_yap() {
+        //videoSayfası.tamEkran.click();
+        BrowserUtils.waitFor(2);
+    }
+
+    @And("Videonun sesini yüzde elli'ye kadar kıs")
+    public void videonunSesiniYüzdeElliYeKadarKıs() {
+        videoSayfası.Ses();
 
     }
     @When("Videoda varsa reklamı atla")
     public void videoda_varsa_reklamı_atla() {
         videoSayfası.Reklam();
-
-
-    }
-    @When("Videoyu tam ekran yap")
-    public void videoyu_tam_ekran_yap() {
-
-    }
-
-
-    @And("Videonun sesini yüzde elli'ye kadar kıs")
-    public void videonunSesiniYüzdeElliYeKadarKıs() {
 
     }
 
@@ -71,6 +71,4 @@ public class Youtube_step_Defs {
     public void videoyuIkiDakikaOtuzbeşInciSaniyeyeIlerlet() {
 
     }
-
-
 }
